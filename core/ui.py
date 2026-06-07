@@ -124,7 +124,6 @@ def print_banner():
 {C.DIM}{C.MAGENTA}  [{C.CYAN}+{C.MAGENTA}] Modulos: {C.GREEN}100+{C.MAGENTA} | {C.CYAN}Comandos: {C.GREEN}Avanzados{C.MAGENTA} | {C.CYAN}Motor: {C.GREEN}TEChCh Engine v2{C.MAGENTA} {C.RESET}
 {C.DIM}{C.ORANGE}  [{C.CYAN}*{C.ORANGE}] Ollama AI Integration: {C.GREEN}Activo{C.ORANGE} | {C.CYAN}Modelos: {C.GREEN}Disponibles{C.ORANGE} {C.RESET}
 """)
-    print(banner)
 
 def print_category_banner(category, description):
     print(f"""
