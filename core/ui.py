@@ -92,14 +92,15 @@ def print_banner():
     clear()
     banner = f"""
 {C.CYAN}{C.BOLD}
-  _______ _______ _____ ______ _______ __   __
- |   __   _____|     |   ___|   __   |  | |  |
- |      |     |   --|     |      __  |  |_|  |
- |___|__|_____|______|_____|_____|__|  |_____|
+ _____ _____ ____ _   _  ____ _   _
+|_   _| ____/ ___| | | |/ ___| | | |
+  | | |  _|| |   | |_| | |   | |_| |
+  | | | |__| |___|  _  | |___|  _  |
+  |_| |_____|\\____|_| |_|\\____|_| |_|{C.RESET}
 
-{C.GREEN}  Terminal Enhanced Cyber Command Hub{C.RESET}
 {C.DIM}{C.WHITE}  ╔══════════════════════════════════════════════════╗
-  ║  {C.CYAN}v2.0.0 {C.SILVER}| Sistema de Ciberseguridad Avanzado       {C.WHITE}║
+  ║  {C.CYAN}Terminal Enhanced Cyber Command Hub              {C.WHITE}║
+  ║  {C.GREEN}v2.0.0 {C.SILVER}| Sistema de Ciberseguridad Avanzado       {C.WHITE}║
   ║  {C.YELLOW}[!] {C.SILVER}SOLO USO AUTORIZADO - ADMINISTRADORES       {C.WHITE}║
   ╚══════════════════════════════════════════════════╝{C.RESET}
 
