@@ -53,15 +53,21 @@ def show_help():
 ║  {C.BOLD}{C.WHITE}TeChCh - Comandos Disponibles                             {C.CYAN}║
 ╚══════════════════════════════════════════════════════════════╝{C.RESET}
 
-  {C.GREEN}[CATEGORIES]{C.RESET}
+  {C.GREEN}Uso: help [categoria]{C.RESET}
+  {C.DIM}Ejemplo: help recon{C.RESET}
 """)
     for cat, cmds in sorted(registry.categories.items()):
-        print(f"    {C.CYAN}{cat.upper():<15}{C.WHITE}({len(cmds)} comandos){C.RESET}")
-    print(f"""
-  {C.GREEN}[COMANDOS ESPECIALES]{C.RESET}
+        print(f"  {C.CYAN}┌─ {C.BOLD}{cat.upper()}{C.RESET}{C.CYAN} ({len(cmds)} comandos) ──────────────────────{C.RESET}")
+        for cmd_name in sorted(cmds):
+            info = registry.commands[cmd_name]
+            desc = info['description'][:55]
+            print(f"  {C.CYAN}│{C.RESET}  {C.GREEN}{cmd_name:<22}{C.WHITE}{desc}{C.RESET}")
+        print(f"  {C.CYAN}└──────────────────────────────────────────────{C.RESET}")
+        print()
+    print(f"""  {C.GREEN}[COMANDOS ESPECIALES]{C.RESET}
     {C.GREEN}help{C.RESET}              Mostrar esta ayuda
+    {C.GREEN}help [cat]{C.RESET}        Ver comandos de una categoria
     {C.GREEN}categories{C.RESET}         Listar categorias
-    {C.GREEN}category <name>{C.RESET}     Ver comandos de una categoria
     {C.GREEN}info <cmd>{C.RESET}          Ver info de un comando
     {C.GREEN}search <query>{C.RESET}      Buscar comandos
     {C.GREEN}ollama{C.RESET}             Panel de control Ollama AI
@@ -176,7 +182,10 @@ def main():
                 break
 
             elif cmd == "help":
-                show_help()
+                if args:
+                    show_category(args[0])
+                else:
+                    show_help()
 
             elif cmd == "categories":
                 show_categories()
