@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+
+echo "Desinstalando TeChCh..."
+rm -f /usr/local/bin/techch
+rm -rf /opt/techch
+echo "TeChCh desinstalado."

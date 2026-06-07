@@ -1,0 +1,17 @@
+Package: techch
+Version: 2.0.0
+Section: utils
+Priority: optional
+Architecture: all
+Depends: python3 (>= 3.8), python3-pip
+Maintainer: TeChCh Security Team <techch@security.local>
+Description: TeChCh - Terminal Enhanced Cyber Command Hub
+ TeChCh es un sistema de ciberseguridad avanzado con 181+ comandos
+ para administracion de sistemas, redes, criptografia, forense digital,
+ analisis de malware, OSINT, y mas.
+ .
+ Incluye integracion con Ollama AI para asistente de ciberseguridad.
+ Categorias: recon, net, crypto, system, wireless, web, forensics,
+ malware, osint.
+ .
+ SOLO USO AUTORIZADO - PROFESIONALES DE SEGURIDAD

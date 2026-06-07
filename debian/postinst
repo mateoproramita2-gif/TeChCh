@@ -1,0 +1,48 @@
+#!/bin/bash
+set -e
+
+INSTALL_DIR="/opt/techch"
+BIN_DIR="/usr/local/bin"
+
+echo "Instalando TeChCh..."
+
+# Crear directorio de instalacion
+mkdir -p "$INSTALL_DIR"
+
+# Copiar archivos del proyecto
+cp -r /usr/share/techch/* "$INSTALL_DIR/" 2>/dev/null || true
+cp -r "$(dirname "$0")"/../* "$INSTALL_DIR/" 2>/dev/null || true
+
+# Crear script de inicio
+cat > "$BIN_DIR/techch" << 'LAUNCHER'
+#!/bin/bash
+cd /opt/techch
+exec python3 techch.py "$@"
+LAUNCHER
+
+chmod +x "$BIN_DIR/techch"
+chmod +x "$INSTALL_DIR/techch.py"
+chmod +x "$INSTALL_DIR/install.sh"
+
+# Crear configuracion por defecto
+mkdir -p "$INSTALL_DIR/config"
+if [ ! -f "$INSTALL_DIR/config/settings.json" ]; then
+    cat > "$INSTALL_DIR/config/settings.json" << 'SETTINGS'
+{
+  "theme": "hacker",
+  "ollama_model": "llama3",
+  "ollama_auto_connect": false,
+  "animations_enabled": true,
+  "sound_enabled": false,
+  "log_commands": true,
+  "max_history": 1000,
+  "timeout": 30,
+  "verbose": false,
+  "language": "es",
+  "banner_style": "full"
+}
+SETTINGS
+fi
+
+echo "TeChCh instalado correctamente."
+echo "Ejecuta: techch"
