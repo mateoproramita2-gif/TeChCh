@@ -88,16 +88,33 @@ def matrix_rain(duration=2, width=None):
             print(output + line, end="", flush=True)
             time.sleep(0.05)
 
+def lolcat(text):
+    colors = [
+        "\033[31m", "\033[33m", "\033[32m", "\033[36m",
+        "\033[34m", "\033[35m", "\033[91m", "\033[93m",
+        "\033[92m", "\033[96m", "\033[94m", "\033[95m",
+    ]
+    result = ""
+    for i, char in enumerate(text):
+        if char == "\n":
+            result += char
+        else:
+            result += colors[i % len(colors)] + char
+    result += "\033[0m"
+    return result
+
 def print_banner():
     clear()
-    banner = f"""
-{C.CYAN}{C.BOLD}
- _____ _____ ____ _   _  ____ _   _
+    banner_art = """ _____ _____ ____ _   _  ____ _   _
 |_   _| ____/ ___| | | |/ ___| | | |
   | | |  _|| |   | |_| | |   | |_| |
   | | | |__| |___|  _  | |___|  _  |
-  |_| |_____|\\____|_| |_|\\____|_| |_|{C.RESET}
+  |_| |_____|\\____|_| |_|\\____|_| |_|"""
 
+    for line in banner_art.split("\n"):
+        print(lolcat(line))
+
+    print(f"""
 {C.DIM}{C.WHITE}  ╔══════════════════════════════════════════════════╗
   ║  {C.CYAN}Terminal Enhanced Cyber Command Hub              {C.WHITE}║
   ║  {C.GREEN}v2.0.0 {C.SILVER}| Sistema de Ciberseguridad Avanzado       {C.WHITE}║
@@ -106,7 +123,7 @@ def print_banner():
 
 {C.DIM}{C.MAGENTA}  [{C.CYAN}+{C.MAGENTA}] Modulos: {C.GREEN}100+{C.MAGENTA} | {C.CYAN}Comandos: {C.GREEN}Avanzados{C.MAGENTA} | {C.CYAN}Motor: {C.GREEN}TEChCh Engine v2{C.MAGENTA} {C.RESET}
 {C.DIM}{C.ORANGE}  [{C.CYAN}*{C.ORANGE}] Ollama AI Integration: {C.GREEN}Activo{C.ORANGE} | {C.CYAN}Modelos: {C.GREEN}Disponibles{C.ORANGE} {C.RESET}
-"""
+""")
     print(banner)
 
 def print_category_banner(category, description):
