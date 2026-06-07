@@ -91,12 +91,12 @@ def matrix_rain(duration=2, width=None):
 def print_banner():
     clear()
     banner = f"""
-{C.CYAN}{C.BOLD}████████╗ ██████╗  █████╗  ██████╗██╗  ██╗
-{C.GREEN}{C.BOLD}╚══██╔══╝██╔═══██╗██╔══██╗██╔════╝██║ ██╔╝
-{C.YELLOW}{C.BOLD}   ██║   ██║   ██║███████║██║     █████╔╝ 
-{C.RED}{C.BOLD}   ██║   ██║   ██║██╔══██║██║     ██╔═██╗ 
-{C.MAGENTA}{C.BOLD}   ██║   ╚██████╔╝██║  ██║╚██████╗██║  ██╗
-{C.BLUE}{C.BOLD}   ╚═╝    ╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝{C.RESET}
+{C.CYAN}{C.BOLD}  ████████╗██╗  ██╗███████╗███╗   ███╗
+{C.GREEN}{C.BOLD}  ╚══██╔══╝██║  ██║██╔════╝████╗ ████║
+{C.YELLOW}{C.BOLD}     ██║   ███████║█████╗  ██╔████╔██║
+{C.RED}{C.BOLD}     ██║   ██╔══██║██╔══╝  ██║╚██╔╝██║
+{C.MAGENTA}{C.BOLD}     ██║   ██║  ██║███████╗██║ ╚═╝ ██║
+{C.BLUE}{C.BOLD}     ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝{C.RESET}
 
 {C.DIM}{C.WHITE}  ╔══════════════════════════════════════════════════╗
   ║  {C.CYAN}TEChCh {C.SILVER}| Terminal Enhanced Cyber Command Hub      {C.WHITE}║
